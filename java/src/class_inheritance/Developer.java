@@ -18,7 +18,7 @@ public class Developer extends Employee {
 
   @Override
   public String jobDescription() {
-    return "Developer: " + listTechnicalSkills(); // Default description, will be overriden by subclasses
+    return "Developer: " + listTechnicalSkills();
   }
 
   private String listTechnicalSkills() {
