@@ -16,9 +16,6 @@
   <component name="CopyrightManager" default="">
     <module2copyright />
   </component>
-  <component name="DependencyValidationManager">
-    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
-  </component>
   <component name="IdProvider" IDEtalkID="97A297D011B3FFA52C5089E3CDFA9FF9" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />

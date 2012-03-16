@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/class-inheritence/java/Class-inheritence.iml" filepath="$PROJECT_DIR$/class-inheritence/java/Class-inheritence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class-inheritence/ruby/src/Ruby.iml" filepath="$PROJECT_DIR$/class-inheritence/ruby/src/Ruby.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ruby.iml" filepath="$PROJECT_DIR$/.idea/ruby.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-objects/test-objects.iml" filepath="$PROJECT_DIR$/test-objects/test-objects.iml" />
     </modules>
   </component>
 </project>
