@@ -57,24 +57,30 @@ class Cut {
 When you have a collaborator of your CUT, it often makes sense to create a double that just fulfills the interactions with the hunk of code you are testing.  These special objects are called Stubs.  
 
 In Groovy, you can use the built in Mocking (stubs are tangled up with mocks in this case).  Or you can just use coercion to create your stub, since for typical "thin" stubs all we care about is the interactions, the stub can be completely fake otherwise.
+
 ```groovy
   cut = new Cut()
   cut.someInjectedCollaborator = [doIt: { a, b, c -> return null }] as Collab
 ```
+
 Ruby, being fully dynamic, has lots of options for creating doubles.  We use rspec with one of my clients, so I'll show examples of that.  The following is how you can create a "full" stub:  a completely different class than the collaborator with only provided behavior:
+
 ```ruby
   cut.some_injected_collaborator = stub(doIt: nil)
 ```
-## Validating interactions with Mocks 
 
+## Validating interactions with Mocks 
 
 ## More Convenient Doubling with "Cyborgs" 
 
 The following is a minor variation on the full stub created above.  Here the rspec stub method (mixed in) only replaces doIt on an existing object.
+
 ```ruby
   cut.some_injected_collaborator.stub(doIt: nil)
 ```
+
 In Groovy, within limits, we can create similar cyborg stubs with a little metaprogramming
+
 ```groovy
   def cut = new CUT()
   cut.metaClass.cut = { println("ANON ${foo}") } // should work
