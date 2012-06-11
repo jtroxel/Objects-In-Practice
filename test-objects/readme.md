@@ -75,16 +75,16 @@ Ruby, being fully dynamic, has lots of options for creating doubles.  We use rsp
 ```
 
 ## Validating interactions with Mocks 
-mock libraries 
-rspec should
-
-## More Convenient Doubling with "Cyborgs" 
+Mocks are a kind of double where the developer specifies what interactions are expected, and the testing framework verifies this.  There are lots of library options out there for creating these full mocks, basically complete imposters that throw errors if the expected interactions don't occur.  For Groovy take a look at the built-in mockFor or Spock mocks.  In Ruby, this kind of mock is usually not necessary:  developers can easily add mock behavior to real objects.
+```ruby
+  cut.some_collaborator.should_receive(:do_it) {nil}
+## More Convenient Doubling with "Cyborgs" (Partial Mocks)
 
 The following is a minor variation on the full stub created above.  Here the rspec stub method (mixed in) only replaces doIt on an existing object.
 
 ```ruby
-  cut.some_injected_collaborator.stub(doIt: nil)
-```
+  cut.some_injected_collaborator.stub(do_it: nil)
+```  
 
 In Groovy, within limits, we can create similar cyborg stubs with a little metaprogramming
 
