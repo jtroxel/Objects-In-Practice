@@ -71,13 +71,15 @@ In Groovy, you can use the built in Mocking (stubs are tangled up with mocks in 
 Ruby, being fully dynamic, has lots of options for creating doubles.  We use rspec with one of my clients, so I'll show examples of that.  The following is how you can create a thin, imposter stub:  a completely different class than the collaborator with only provided behavior:
 
 ```ruby
-  cut.some_injected_collaborator = stub(doIt: nil)
+  cut.some_injected_collaborator = stub(do_it: nil)
 ```
 
 ## Validating interactions with Mocks 
 Mocks are a kind of double where the developer specifies what interactions are expected, and the testing framework verifies this.  There are lots of library options out there for creating these full mocks, basically complete imposters that throw errors if the expected interactions don't occur.  For Groovy take a look at the built-in mockFor or Spock mocks.  In Ruby, this kind of mock is usually not necessary:  developers can easily add mock behavior to real objects.
 ```ruby
   cut.some_collaborator.should_receive(:do_it) {nil}
+```
+
 ## More Convenient Doubling with "Cyborgs" (Partial Mocks)
 
 The following is a minor variation on the full stub created above.  Here the rspec stub method (mixed in) only replaces doIt on an existing object.
