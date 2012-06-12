@@ -81,8 +81,9 @@ Mocks are a kind of double where the developer specifies what interactions are e
 ```
 
 ## More Convenient Doubling with "Cyborgs" (Partial Mocks)
+Another flavor of stub, often called a partial stub, takes an existing class or object and only changes the stuff that you need to test the code that collaborates with the stub.  Like a cyborg, these stubs are normal objects with some parts replaced.
 
-The following is a minor variation on the full stub created above.  Here the rspec stub method (mixed in) only replaces doIt on an existing object.
+The following is a minor variation on the full stub created above (look carefully).  Here the rspec stub method (mixed in) only replaces doIt on an existing object.
 
 ```ruby
   cut.some_injected_collaborator.stub(do_it: nil)
